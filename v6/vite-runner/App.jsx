@@ -2,7 +2,7 @@ import React from './core/React.js'
 
 // const App =  React.createElement('div', {id:'app'}, 'app')
 
-function Counter({num}) {
+export function Counter({num}) {
 	return <div>counter:{num}</div>
 }
 

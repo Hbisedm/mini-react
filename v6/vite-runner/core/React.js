@@ -28,6 +28,8 @@ function createElement(type, props, ...children) {
 }
 
 function render(el, container) {
+	console.log('render', el)
+	console.log('container', container)
 	nextWorkOfUnit = {
 		dom: container,
 		props: {
