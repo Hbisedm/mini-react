@@ -299,8 +299,7 @@ function useState(initial){
 
 
 	function setState(action) {
-
-		stateHook.queue.push(typeof action === 'function' ? action : action => action)
+		stateHook.queue.push(action)
 
 		wipRoot = {
 			...currentWipFiber,
