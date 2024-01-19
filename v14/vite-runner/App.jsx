@@ -7,7 +7,7 @@ function Foo() {
 
 	function handleClick() {
 		setCount((c) => c+ 1)
-		setBar((b) => b+'bar')
+		setBar('bar')
 	}
 
 	return (

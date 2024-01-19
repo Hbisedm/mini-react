@@ -299,7 +299,13 @@ function useState(initial){
 
 
 	function setState(action) {
-		stateHook.queue.push(action)
+		const eagerState = typeof action === 'function' ? action(stateHook.state) : action	
+		// 避免没必要的更新
+		if(stateHook.state === eagerState){
+			return
+		}
+
+		stateHook.queue.push(typeof action === 'function' ? action : () => action)
 
 		wipRoot = {
 			...currentWipFiber,
