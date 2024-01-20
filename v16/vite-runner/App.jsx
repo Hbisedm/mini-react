@@ -42,10 +42,26 @@ function Foo() {
 	)
 }
 
+function Bar(){
+	let [bar, setBar] = React.useState(1)
+
+	function handleClick() {
+		setBar(++bar)
+	}
+
+	return <div>
+		i am bar FC
+		<div > the bar val: {bar}</div>
+		<button onClick={handleClick}>button</button>
+	</div>
+
+}
+
 function App() {
 	return <div>
 		hi
 		<Foo></Foo>
+		<Bar></Bar>
 	</div>
 }
 
