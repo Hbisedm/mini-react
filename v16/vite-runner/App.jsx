@@ -13,10 +13,23 @@ function Foo() {
 
 	React.useEffect(() => {
 		console.log('init')
+		return () => {
+			console.log('cleanup 0')
+		}
 	}, [])
 
 	React.useEffect(() => {
-		console.log('update count:', count)
+		console.log('update count1:', count)
+		return () => {
+			console.log('cleanup 1, the prev val::', count)
+		}
+	}, [count])
+
+	React.useEffect(() => {
+		console.log('update count2:', count)
+		return () => {
+			console.log('cleanup 2, the prev val::', count)
+		}
 	}, [count])
 
 	return (
